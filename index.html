@@ -3,75 +3,76 @@
 
 <head>
     <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/bc746ec93a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="icon" 
-      type="image/png" 
-      href="./favicon.png">
-    <meta charset="UTF-8">
-    <title>Online Meme generator</title>
+    <link rel="stylesheet" href="res/bootstrap/dist/css/bootstrap.min.css">
+    <!-- custom -->
+    <link rel="stylesheet" href="css/style.min.css" type="text/css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meme generator</title>
 </head>
 
 <body>
+    <div class="root container-fluid m-0 p-0">
 
-    <div class="root">
-        <nav class="navbar navbar-light bg-dark">
-            <a class="navbar-brand" href="#" style="color: white;">
-                Meme Generator v1
-            </a>
-            <i id="add-image" class="fas fa-sync-alt" style="color: white;"></i>
+        <div class="header shadow  w-100 text-light bg-info text-center">
+            <div>Meme Generator</div>
+        </div>
 
-        </nav>
+        <div class="container w-100">
+            <div class="row m-0 p-0">
+                <div class="col-md-6 m-0 p-0 preview-image">
+                    <div id="my-node" class="bg-dark image">
+                        <img style="width: 100%;" class="img" id="my-node-img" src="assets/memes/430.png" alt="#">
+                        <h2 class="texts top-text" type="text" id="top">Type Something</h2>
+                        <h2 class="texts bottom-text" type="text" id="bottom">Type Something</h2>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mt-4">Set Background Image</div>
+                    <div class="input-group mb-2 mt-0">
+                        <div class="input-group-prepend">
+                            <button id="add-image" class="btn btn-info " type="button" id="inputGroupFileAddon03">Get
+                                Random</button>
+                        </div>
+                        <div class="custom-file ">
+                            <input onchange="readURL(this);" type="file" class="custom-file-input" id="inputGroupFile03"
+                                aria-describedby="inputGroupFileAddon03">
+                            <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+                        </div>
+                    </div>
+                    <div class="mt-0">Set Texts</div>
+                    <input onkeyup="addTopText()" id="top-text" type="text" class="mb-1 mt-0 form-control"
+                        placeholder="Upper text here">
 
+                    <input onkeyup="addBotText()" id="bottom-text" type="text" class="mb-4 mt-0 form-control"
+                        placeholder="Bottom text here" aria-label="Recipient's username"
+                        aria-describedby="button-addon2">
 
-        <div id="container">
-            <div id="my-node">
-                <img id="my-node-img" src="./memes/430.png" alt="#">
-                <div id="top">Hello</div>
-                <div id="bottom">world</div>
+                    <button id="foo" type="button" class="btn btn-info btn-lg btn-block">Download</button>
+                    <div class="row">
+                        <small class="footer w-100 text-center text-muted mt-4">v2.0
+                            <i class="fa fa-github"></i> <a
+                                href="https://github.com/siddsarkar/meme-generator-web-app">Github</a>
+                            <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
+                                    href="https://facebook.com/sidking791">Siddharth</a></p>
+                        </small>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="input-group mb-3" style="margin-top: 10px;">
-            <input onkeydown="addTexts()" id="top-text" type="text" class="form-control" placeholder="Upper text here"
-                aria-label="Recipient's username" aria-describedby="button-addon2">
-        </div>
 
-
-
-        <div class="input-group mb-3" style="margin-top: 0">
-            <input onkeydown="addTexts()" id="bottom-text" type="text" class="form-control" placeholder="Bottom text here"
-                aria-label="Recipient's username" aria-describedby="button-addon2">
-        </div>
-
-        <button id="foo" type="button" class="btn btn-primary btn-lg btn-block">Download</button>
-
-
-        <div class="footer">
-            <p class="text-center" style="font-size: 24px;"><i class="fab fa-github"></i> <a href="https://github.com/siddsarkar/meme-generator-web-app">Github</a></p>
-        <p class="text-center" style="font-size: 24px;">Made with ❤ by Siddharth</p>
         </div>
     </div>
 
-    <!-- for bootstap  -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="res/jquery/dist/jquery.slim.min.js"></script>
     <!-- FileSaver JS -->
     <script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
     <!-- DOM TO IMAGE -->
     <script src="https://cdn.bootcss.com/dom-to-image/2.6.0/dom-to-image.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
