@@ -1,6 +1,6 @@
 ## meme-generator-web-app
 
-### A fun simple javascript Web-app project to generate meme and download.
+### _A fun simple javascript Web-app project to generate meme and download._
 
 #### Features:
 
