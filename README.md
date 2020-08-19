@@ -1,6 +1,7 @@
-## meme-generator-web-app
+## Meme Generator (JS / HTML / CSS)
 
-### A fun simple javascript Web-app project to generate meme and download.
+### _A fun simple javascript Web-app project to generate meme and download._
+- [Visit Site](https://siddsarkar.github.io/meme-generator-web-app/)
 
 #### Features:
 
